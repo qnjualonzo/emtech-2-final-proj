@@ -3,9 +3,14 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import numpy as np
 from tensorflow.keras.models import load_model
+from keras.models import load_model
 
-# Load the pre-trained model
-model = load_model('sentiment_analysis_model.h5')  # Replace with your model path
+@st.cache_resource
+def load_model_once():
+    return load_model('sentiment_analysis_model.h5')
+
+model = load_model_once()
+
 
 # Define the parameters
 max_features = 10000
