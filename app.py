@@ -5,7 +5,7 @@ import numpy as np
 from tensorflow.keras.models import load_model
 
 # Load the pre-trained model
-model = load_model('/path/to/sentiment_analysis_model.h5')  # Replace with your model path
+model = load_model('sentiment_analysis_model.h5')  # Replace with your model path
 
 # Define the parameters
 max_features = 10000
